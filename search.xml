@@ -23,7 +23,7 @@
 <ul>
 <li><p>样例链接：<a href="https://reader.htmake.com/">点击这里</a></p>
 <blockquote>
-<p>阅读WEB样例:<img src="/docs/READER/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
+<p>阅读WEB样例:<img data-src="/docs/READER/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
 </blockquote>
 </li>
 </ul>
@@ -156,7 +156,7 @@
 <li><p>第四步：打开你的github主页，进入个人设置 ➡️ <a href="https://github.com/settings/keys">SSH and GPG keys</a> ➡️ New SSH key，把复制的内容粘贴进去，title随便填，保存即可，我们的公钥就添加成功了，设置好如下图：</p>
 </li>
 </ul>
-<p><img src="/docs/create-blog/ssh.png" alt="SSH and GPG keys" title="SSH and GPG keys"></p>
+<p><img data-src="/docs/create-blog/ssh.png" alt="SSH and GPG keys" title="SSH and GPG keys"></p>
 <ul>
 <li><p>第五步：检测是否设置成功：</p>
 <p>输入命令:</p>
@@ -200,9 +200,9 @@
 <blockquote>
 <p>使用Cloudflare Page部署</p>
 </blockquote>
-<h3 id="关联Github账号"><a href="#关联Github账号" class="headerlink" title="关联Github账号"></a>关联Github账号</h3><p><img src="/docs/create-blog/cloudflare-pages-github-config.webp" alt="关联Github账号" title="关联Github账号"></p>
-<h3 id="授权完后，就能在-Cloudflare-Pages-上选择对应的仓库了，默认是-main-分支，可以自定义选择分支。"><a href="#授权完后，就能在-Cloudflare-Pages-上选择对应的仓库了，默认是-main-分支，可以自定义选择分支。" class="headerlink" title="授权完后，就能在 Cloudflare Pages 上选择对应的仓库了，默认是 main 分支，可以自定义选择分支。"></a>授权完后，就能在 Cloudflare Pages 上选择对应的仓库了，默认是 main 分支，可以自定义选择分支。</h3><p><img src="/docs/create-blog/pickRepository.png" alt="选择仓库" title="选择仓库"></p>
-<h3 id="等待部署-其他全部为空白"><a href="#等待部署-其他全部为空白" class="headerlink" title="等待部署 其他全部为空白"></a>等待部署 <font color=Red>其他全部为空白</font></h3><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><p><img src="/docs/create-blog/customdomian.png" alt="填写域名" title="填写域名"></p>
+<h3 id="关联Github账号"><a href="#关联Github账号" class="headerlink" title="关联Github账号"></a>关联Github账号</h3><p><img data-src="/docs/create-blog/cloudflare-pages-github-config.webp" alt="关联Github账号" title="关联Github账号"></p>
+<h3 id="授权完后，就能在-Cloudflare-Pages-上选择对应的仓库了，默认是-main-分支，可以自定义选择分支。"><a href="#授权完后，就能在-Cloudflare-Pages-上选择对应的仓库了，默认是-main-分支，可以自定义选择分支。" class="headerlink" title="授权完后，就能在 Cloudflare Pages 上选择对应的仓库了，默认是 main 分支，可以自定义选择分支。"></a>授权完后，就能在 Cloudflare Pages 上选择对应的仓库了，默认是 main 分支，可以自定义选择分支。</h3><p><img data-src="/docs/create-blog/pickRepository.png" alt="选择仓库" title="选择仓库"></p>
+<h3 id="等待部署-其他全部为空白"><a href="#等待部署-其他全部为空白" class="headerlink" title="等待部署 其他全部为空白"></a>等待部署 <font color=Red>其他全部为空白</font></h3><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><p><img data-src="/docs/create-blog/customdomian.png" alt="填写域名" title="填写域名"></p>
 <h2 id="🌀Next主题配置"><a href="#🌀Next主题配置" class="headerlink" title="🌀Next主题配置"></a>🌀Next主题配置</h2><hr>
 <blockquote>
 <p><a href="https://theme-next.js.org/docs/theme-settings/">主题配置</a></p>
