@@ -54,23 +54,10 @@
 <h1 id="🌀Next主题配置"><a href="#🌀Next主题配置" class="headerlink" title="🌀Next主题配置"></a>🌀Next主题配置</h1><hr>
 <p>主题官网有详细的配置介绍：<br><a href="https://theme-next.js.org/docs/theme-settings/">官网</a></p>
 <hr>
-<p>所有资源来自网络<br>感谢 <a href="https://dragonbaby308.github.io/hexo/">DragonBaby308</a> &amp; <a href="https://www.bilibili.com/read/cv12633102">码游菌</a><br>Collected by Brian</p>
+<p>Authored by Brian</p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HELLO WORLD</title>
-    <url>/docs/hello-world/</url>
-    <content><![CDATA[<p>Hello World<br>This is a test page<br>你好 世界<br>这是用于测试Blog的页面</p>
-<span id="more"></span>
-
-<hr>
-<p>Written by Brian</p>
-]]></content>
-      <tags>
-        <tag>Hello World</tag>
       </tags>
   </entry>
   <entry>
@@ -91,10 +78,23 @@
 <li>样例链接：<a href="https://reader.htmake.com/">点击这里</a><br>  阅读WEB样例:<img data-src="/docs/reader/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></li>
 </ul>
 <hr>
-<p>所有资源来自网络<br>感谢 咕咕鸽, 阿虚同学 &amp; hectorqin<br>Collected by Brian</p>
+<p>Authored by Brian</p>
 ]]></content>
       <tags>
         <tag>Academic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HELLO WORLD</title>
+    <url>/docs/hello-world/</url>
+    <content><![CDATA[<p>Hello World<br>This is a test page<br>你好 世界<br>这是用于测试Blog的页面</p>
+<span id="more"></span>
+
+<hr>
+<p>Authored by Brian</p>
+]]></content>
+      <tags>
+        <tag>Hello World</tag>
       </tags>
   </entry>
   <entry>
@@ -108,7 +108,7 @@
 <li>官网地址：<br><del><a href="https://zh.z-lib.org/">https://zh.z-lib.org/</a></del> <font color=Red>已经被端掉.</font><br>  目前解决方法是用 <a href="https://singlelogin.me/">Zlibrary</a> 创建一个账号，之后Zlibrary会提供个人链接。</li>
 </ul>
 <hr>
-<p>所有资源来自网络<br>Collected by Brian</p>
+<p>Authored by Brian</p>
 ]]></content>
       <tags>
         <tag>Academic</tag>
