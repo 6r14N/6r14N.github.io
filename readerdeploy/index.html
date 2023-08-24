@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png">
+  <link rel="mask-icon" href="/images/icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"6r14n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="📖Reader教程 安卓手机APP阅读3服务器版，桌面端。后端 Kotlin + Spring Boot + Vert.x + Coroutine ；前端 Vue.js + Element。GitHub 开源项目，支持Docker搭建。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自建阅读WEB版教程">
+<meta property="og:url" content="http://6r14n.github.io/readerdeploy/index.html">
+<meta property="og:site_name" content="Brian&#39;s 小窝">
+<meta property="og:description" content="📖Reader教程 安卓手机APP阅读3服务器版，桌面端。后端 Kotlin + Spring Boot + Vert.x + Coroutine ；前端 Vue.js + Element。GitHub 开源项目，支持Docker搭建。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://6r14n.github.io/readerdeploy/addproxy1.png">
+<meta property="og:image" content="http://6r14n.github.io/readerdeploy/addproxy2.png">
+<meta property="article:published_time" content="2023-06-09T05:27:43.000Z">
+<meta property="article:modified_time" content="2023-08-06T08:45:41.918Z">
+<meta property="article:author" content="Brian">
+<meta property="article:tag" content="Book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://6r14n.github.io/readerdeploy/addproxy1.png">
+
+
+<link rel="canonical" href="http://6r14n.github.io/readerdeploy/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://6r14n.github.io/readerdeploy/","path":"readerdeploy/","title":"自建阅读WEB版教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>自建阅读WEB版教程 | Brian's 小窝</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Brian's 小窝</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%96Reader%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">📖Reader教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E8%AE%B0"><span class="nav-number">1.1.</span> <span class="nav-text">切记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9D%93%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="nav-number">1.2.</span> <span class="nav-text">❓搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9A%99%EF%B8%8F%E6%90%AD%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">⚙️搭建方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA"><span class="nav-number">1.3.1.</span> <span class="nav-text">搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%AC%86%EF%B8%8F%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.2.</span> <span class="nav-text">⬆️更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%8C%E5%8D%B8%E8%BD%BD"><span class="nav-number">1.3.3.</span> <span class="nav-text">❌卸载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%98%81%EF%B8%8F%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%BF%85%E9%A1%BB%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">☁️反向代理（必须）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8Nginx-Proxy-Manager"><span class="nav-number">1.4.1.</span> <span class="nav-text">利用Nginx Proxy Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Brian"
+      src="/images/profip.png">
+  <p class="site-author-name" itemprop="name">Brian</p>
+  <div class="site-description" itemprop="description">JUST FOR FUN</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tLzZyMTRO" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;6r14N"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div id="musicplayer">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/476454372&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/charlotte-gainsbourg" title="Charlotte Gainsbourg" target="_blank" style="color: #cccccc; text-decoration: none;">Charlotte Gainsbourg</a> · <a href="https://soundcloud.com/charlotte-gainsbourg/charlotte-gainsbourg-deadly" title="Charlotte Gainsbourg - Deadly Valentine (Soulwax Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">Charlotte Gainsbourg - Deadly Valentine (Soulwax Remix)</a></div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://6r14n.github.io/readerdeploy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profip.png">
+      <meta itemprop="name" content="Brian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brian's 小窝">
+      <meta itemprop="description" content="JUST FOR FUN">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="自建阅读WEB版教程 | Brian's 小窝">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自建阅读WEB版教程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-09 00:27:43" itemprop="dateCreated datePublished" datetime="2023-06-09T00:27:43-05:00">2023-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-06 03:45:41" itemprop="dateModified" datetime="2023-08-06T03:45:41-05:00">2023-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Book/" itemprop="url" rel="index"><span itemprop="name">Book</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Book/Reader/" itemprop="url" rel="index"><span itemprop="name">Reader</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Book/Reader/Deploy/" itemprop="url" rel="index"><span itemprop="name">Deploy</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="📖Reader教程"><a href="#📖Reader教程" class="headerlink" title="📖Reader教程"></a>📖Reader教程</h1><hr>
+<p>安卓手机APP<code>阅读3</code>服务器版，桌面端。<br>后端 <code>Kotlin</code> + <code>Spring Boot</code> + <code>Vert.x</code> + <code>Coroutine</code> ；<br>前端 <code>Vue.js</code> + <code>Element</code>。<br>GitHub 开源项目，支持Docker搭建。</p>
+<span id="more"></span>
+
+<div class="note warning"><h2 id="切记"><a href="#切记" class="headerlink" title="切记"></a>切记</h2><p><strong>以下服务器和域名均在海外搭建以及购买</strong><br><strong>如果在中国大陆搭建，请遵守当地法律并进行备案</strong></p>
+</div>
+
+<h2 id="❓搭建环境"><a href="#❓搭建环境" class="headerlink" title="❓搭建环境"></a>❓搭建环境</h2><hr>
+<div class="note default"><ul>
+<li><p>服务器，按小时计费，可随时销毁（最好是选非大陆的服务器）</p>
+</li>
+<li><p>系统：Debian 10</p>
+</li>
+<li><p>域名一枚，并做好解析到服务器上</p>
+</li>
+<li><p>安装好Docker、Docker-compose</p>
+</li>
+</ul>
+</div>
+
+<h2 id="⚙️搭建方式"><a href="#⚙️搭建方式" class="headerlink" title="⚙️搭建方式"></a>⚙️搭建方式</h2><hr>
+<h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><p>服务器初始设置，参考</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i <span class="comment"># 切换到root用户</span></span><br><span class="line"></span><br><span class="line">apt update -y  <span class="comment"># 升级packages</span></span><br><span class="line"></span><br><span class="line">apt install wget curl sudo vim git  <span class="comment"># Debian系统比较干净，安装常用的软件</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一下安装的目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p data/docker_data/reader</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> data/docker_data/reader</span><br><span class="line"></span><br><span class="line">nano docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<mark class="label info">docker-compose.yml</mark> 内容如下：
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.1&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reader 在线阅读</span></span><br><span class="line"><span class="comment"># 书源参考 : https://github.com/NZESupB/ReadSource,书源合集下选一个合集进入网页后, Ctrl+S 保存至本地后导入网站即可,或者点击远程书源,将链接导入即可</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader java -jar /app/bin/reader.jar --spring.profiles.active=prod --reader.app.secure=true --reader.app.secureKey=管理密码 --reader.app.inviteCode=注册邀请码</span></span><br><span class="line"><span class="comment"># 多用户版 使用环境变量</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -e &quot;READER_APP_SECURE=true&quot; -e &quot;READER_APP_SECUREKEY=管理密码&quot; -e &quot;READER_APP_INVITECODE=注册邀请码&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自用版</span></span><br><span class="line"><span class="comment">#  read_own:</span></span><br><span class="line"><span class="comment">#    image: hectorqin/reader</span></span><br><span class="line"><span class="comment">#    container_name: reader_own</span></span><br><span class="line"><span class="comment">#    restart: always</span></span><br><span class="line"><span class="comment">#    ports:</span></span><br><span class="line"><span class="comment">#      - 4395:8080</span></span><br><span class="line"><span class="comment">#    volumes:</span></span><br><span class="line"><span class="comment">#      - /home/reader/logs:/logs</span></span><br><span class="line"><span class="comment">#      - /home/reader/storage:/storage</span></span><br><span class="line"><span class="comment">#    environment:</span></span><br><span class="line"><span class="comment">#      - SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line"><span class="comment">#      - READER_APP_CACHECHAPTERCONTENT=true #是否开启缓存章节内容 V2.0</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="attr">read_all:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">hectorqin/reader</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">reader</span> <span class="comment">#容器名 可自行修改</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">4396</span><span class="string">:8080</span> <span class="comment">#4396端口映射可自行修改</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/logs:/logs</span> <span class="comment">#log映射目录 /root/data/docker_data/reader/logs 映射目录可自行修改</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/storage:/storage</span> <span class="comment">#数据映射目录 /root/data/docker_data/reader/storage 映射目录可自行修改</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECURE=true</span> <span class="comment">#开启登录鉴权，开启后将支持多用户模式</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_CACHECHAPTERCONTENT=true</span> <span class="comment">#是否开启缓存章节内容 V2.0</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECUREKEY=adminpwd</span>  <span class="comment">#管理员密码  可自行修改</span></span><br><span class="line">    <span class="comment">#- READER_APP_INVITECODE=registercode #注册邀请码,如需要取消注释 可自行修改</span></span><br><span class="line">    <span class="comment"># 自动更新docker</span></span><br><span class="line"><span class="attr">watchtower:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">containrrr/watchtower</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">watchtower</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="comment"># 环境变量,设置为上海时区</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">reader</span> <span class="string">watchtower</span> <span class="string">--cleanup</span> <span class="string">--schedule</span> <span class="string">&quot;0 0 4 * * *&quot;</span></span><br><span class="line">    <span class="comment"># 仅更新reader与watchtower容器,如需其他自行添加 &#x27;容器名&#x27; ,如:reader watchtower redis</span></span><br><span class="line">    <span class="comment"># --cleanup 更新后清理旧版本镜像</span></span><br><span class="line">    <span class="comment"># --schedule 自动检测更新 crontab定时(限定6位crontab) 此处代表凌晨4点整</span></span><br></pre></td></tr></table></figure>
+
+<p>没问题的话，<mark class="label info">docker-compose.yml</mark> 退出，按<code>y</code>保存，<code>enter</code>确认。</p>
+<p>查看端口是否被占用，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:4396  <span class="comment">#查看4396端口是否被占用，如果被占用，重新自定义一个端口</span></span><br></pre></td></tr></table></figure>
+
+<p>如果出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-bash: lsof: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lsof  <span class="comment">#安装lsof</span></span><br></pre></td></tr></table></figure>
+
+<p>如果端口没有被占用，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>访问： <mark class="label info">http:ip:4396</mark> 即可。</p>
+<h3 id="⬆️更新"><a href="#⬆️更新" class="headerlink" title="⬆️更新"></a>⬆️更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose pull    <span class="comment"># 拉取最新的镜像</span></span><br><span class="line"></span><br><span class="line">docker-compose up -d   <span class="comment"># 重新更新当前镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>利用Docker-compose搭建的应用，更新非常容易</p>
+<h3 id="❌卸载"><a href="#❌卸载" class="headerlink" title="❌卸载"></a>❌卸载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo -i  <span class="comment"># 切换到root</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose down    <span class="comment"># 停止容器，此时不会删除映射到本地的数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">    </span><br><span class="line"><span class="built_in">rm</span> -rf /root/data/docker_data/reader  <span class="comment"># 完全删除映射到本地的数据</span></span><br></pre></td></tr></table></figure>
+
+<p>利用Docker-compose搭建的应用，删除也非常容易</p>
+<h2 id="☁️反向代理（必须）"><a href="#☁️反向代理（必须）" class="headerlink" title="☁️反向代理（必须）"></a>☁️反向代理（必须）</h2><hr>
+<h3 id="利用Nginx-Proxy-Manager"><a href="#利用Nginx-Proxy-Manager" class="headerlink" title="利用Nginx Proxy Manager"></a>利用Nginx Proxy Manager</h3><p>在添加反向代理之前，确保你已经完成了域名解析，不会的可以看这个：域名一枚，并做好解析到服务器上（<a href="../domain">域名购买、域名解析</a>）</p>
+<p>之后，登陆Nginx Proxy Manager。（不会的看这个：安装Nginx Proxy Manager（<a href="../installNPM">相关教程</a>））</p>
+<div class="note danger"><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Nginx Proxy Manager（以下简称NPM）会用到 <mark class="label info">80</mark>、<mark class="label info">443</mark> 端口，所以本机不能占用（比如原来就有Nginx）</p>
+</div>
+
+<p>直接丢几张图：<br><img data-src="/readerdeploy/addproxy1.png" alt="addproxy1" title="addproxy1"><br><img data-src="/readerdeploy/addproxy2.png" alt="addproxy2" title="addproxy2"><br>注意填写对应的 <mark class="label info">域名</mark> 、 <mark class="label info">IP</mark> 和 <mark class="label info">端口</mark> ，按文章来的话，应该是 <mark class="label success">4396</mark></p>
+<p>IP填写：</p>
+<p>如果Nginx Proxy Manager和reader在同一台服务器上，可以在终端输入:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show docker0</span><br></pre></td></tr></table></figure>
+
+<p>查看对应的Docker容器内部IP。</p>
+<p>否则直接填 <mark class="label info">cryptgeon所在的服务器IP</mark> 就行。</p>
+<hr>
+<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Book/" rel="tag"><i class="fa fa-tag"></i> Book</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_telegram"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_copy_link"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/zlibrary/" rel="prev" title="Z-Library 世界上最大的数字图书馆">
+                  <i class="fa fa-angle-left"></i> Z-Library 世界上最大的数字图书馆
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/installNPM/" rel="next" title="安装Nginx Proxy Manager">
+                  安装Nginx Proxy Manager <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa-solid fa-star fa-flip"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Brian</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">6k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">21 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon.png">
+  <link rel="mask-icon" href="/images/icon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"6r14n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Nginx Proxy Manager Nginx proxy manager是一个很简单的反向代理工具。 官网：https:&#x2F;&#x2F;nginxproxymanager.com&#x2F; 门槛极低，操作简单，不需要你掌握很复杂的Nginx配置知识，只需要几步就能很轻松完成反向代理的设置和SSL证书的部署。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Nginx Proxy Manager">
+<meta property="og:url" content="http://6r14n.github.io/installNPM/index.html">
+<meta property="og:site_name" content="Brian&#39;s 小窝">
+<meta property="og:description" content="Nginx Proxy Manager Nginx proxy manager是一个很简单的反向代理工具。 官网：https:&#x2F;&#x2F;nginxproxymanager.com&#x2F; 门槛极低，操作简单，不需要你掌握很复杂的Nginx配置知识，只需要几步就能很轻松完成反向代理的设置和SSL证书的部署。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://6r14n.github.io/installNPM/choose18.webp">
+<meta property="og:image" content="http://6r14n.github.io/installNPM/change.webp">
+<meta property="article:published_time" content="2023-06-09T05:58:42.000Z">
+<meta property="article:modified_time" content="2023-08-06T08:47:41.978Z">
+<meta property="article:author" content="Brian">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://6r14n.github.io/installNPM/choose18.webp">
+
+
+<link rel="canonical" href="http://6r14n.github.io/installNPM/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://6r14n.github.io/installNPM/","path":"installNPM/","title":"安装Nginx Proxy Manager"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>安装Nginx Proxy Manager | Brian's 小窝</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Brian's 小窝</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nginx-Proxy-Manager"><span class="nav-number">1.</span> <span class="nav-text">Nginx Proxy Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9A%99%EF%B8%8F%E5%BC%80%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="nav-number">1.1.</span> <span class="nav-text">⚙️开始部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E9%99%86%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.1.1.</span> <span class="nav-text">登陆服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0SWAP%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="nav-number">1.1.2.</span> <span class="nav-text">添加SWAP虚拟内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%AC%86%EF%B8%8F%E5%8D%87%E7%BA%A7-packages"><span class="nav-number">1.1.3.</span> <span class="nav-text">⬆️升级 packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A5%E5%AE%89%E8%A3%85-Docker-%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.4.</span> <span class="nav-text">📥安装 Docker 环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%A5%E5%AE%89%E8%A3%85-Nginx-Proxy-Manager"><span class="nav-number">1.1.5.</span> <span class="nav-text">📥安装 Nginx Proxy Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%AC%86%EF%B8%8F%E6%9B%B4%E6%96%B0-Nginx-Proxy-Manager"><span class="nav-number">1.1.6.</span> <span class="nav-text">⬆️更新 Nginx Proxy Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%8C%E5%8D%B8%E8%BD%BD-Nginx-Proxy-Manager"><span class="nav-number">1.1.7.</span> <span class="nav-text">❌卸载 Nginx Proxy Manager</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90%E6%9C%80%E5%90%8E"><span class="nav-number">1.2.</span> <span class="nav-text">⭐最后</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Brian"
+      src="/images/profip.png">
+  <p class="site-author-name" itemprop="name">Brian</p>
+  <div class="site-description" itemprop="description">JUST FOR FUN</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tLzZyMTRO" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;6r14N"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div id="musicplayer">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/476454372&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/charlotte-gainsbourg" title="Charlotte Gainsbourg" target="_blank" style="color: #cccccc; text-decoration: none;">Charlotte Gainsbourg</a> · <a href="https://soundcloud.com/charlotte-gainsbourg/charlotte-gainsbourg-deadly" title="Charlotte Gainsbourg - Deadly Valentine (Soulwax Remix)" target="_blank" style="color: #cccccc; text-decoration: none;">Charlotte Gainsbourg - Deadly Valentine (Soulwax Remix)</a></div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://6r14n.github.io/installNPM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/profip.png">
+      <meta itemprop="name" content="Brian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brian's 小窝">
+      <meta itemprop="description" content="JUST FOR FUN">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="安装Nginx Proxy Manager | Brian's 小窝">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          安装Nginx Proxy Manager
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-09 00:58:42" itemprop="dateCreated datePublished" datetime="2023-06-09T00:58:42-05:00">2023-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-06 03:47:41" itemprop="dateModified" datetime="2023-08-06T03:47:41-05:00">2023-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/Npm/" itemprop="url" rel="index"><span itemprop="name">Npm</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/Npm/Install/" itemprop="url" rel="index"><span itemprop="name">Install</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Nginx-Proxy-Manager"><a href="#Nginx-Proxy-Manager" class="headerlink" title="Nginx Proxy Manager"></a>Nginx Proxy Manager</h1><hr>
+<p>Nginx proxy manager是一个很简单的反向代理工具。</p>
+<p>官网：<span class="exturl" data-url="aHR0cHM6Ly9uZ2lueHByb3h5bWFuYWdlci5jb20v">https://nginxproxymanager.com/<i class="fa fa-external-link-alt"></i></span></p>
+<p>门槛极低，操作简单，不需要你掌握很复杂的Nginx配置知识，只需要几步就能很轻松完成反向代理的设置和SSL证书的部署。</p>
+<span id="more"></span>
+
+<h2 id="⚙️开始部署"><a href="#⚙️开始部署" class="headerlink" title="⚙️开始部署"></a>⚙️开始部署</h2><hr>
+<p>服务器环境：Debian 10（Ubuntu 20.04也可以）或以上版本</p>
+<h3 id="登陆服务器"><a href="#登陆服务器" class="headerlink" title="登陆服务器"></a>登陆服务器</h3><p>选择一款连接SSH的软件。</p>
+<p>Mac 或者 Linux 用户可以直接用系统自带的 <mark class="label info">终端</mark> （也叫 <mark class="label info">Terminal</mark> ）来登陆服务器。</p>
+<p>输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 你的用户名@你的服务器IP -P 22</span><br></pre></td></tr></table></figure>
+
+<p>如果你没有更改 ssh 的端口，默认就是 <mark class="label info">22</mark> ，当然为了服务器安全，建议你可以换一个别的端口。</p>
+<h3 id="添加SWAP虚拟内存"><a href="#添加SWAP虚拟内存" class="headerlink" title="添加SWAP虚拟内存"></a>添加SWAP虚拟内存</h3><div class="note default"><p>注意：VPS 的内存如果过小，建议设置一下 SWAP，一般为内存的 1-1.5 倍即可，可以让系统运行更流畅！</p>
+</div>
+
+<p>设置 SWAP 可以用脚本:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O box.sh &lt;https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh&gt; &amp;&amp; <span class="built_in">chmod</span> +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/installNPM/choose18.webp" alt="选择第18个选项" title="选择第18个选项"></p>
+<p>输入 <code>18</code>，然后输入你想要扩容的数值即可。</p>
+<p><img data-src="/installNPM/change.webp" alt="输入扩容的数值" title="输入扩容的数值"></p>
+<h3 id="⬆️升级-packages"><a href="#⬆️升级-packages" class="headerlink" title="⬆️升级 packages"></a>⬆️升级 packages</h3><p>逐条执行以下命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i <span class="comment"># 切换到 root 用户</span></span><br><span class="line"></span><br><span class="line">apt update -y  <span class="comment"># 升级 packages</span></span><br><span class="line"></span><br><span class="line">apt install wget curl sudo vim git -y  <span class="comment"># Debian 系统比较干净，安装常用的软件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="📥安装-Docker-环境"><a href="#📥安装-Docker-环境" class="headerlink" title="📥安装 Docker 环境"></a>📥安装 Docker 环境</h3><ol>
+<li>安装 Docker（非大陆服务器）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- get.docker.com | bash</span><br><span class="line"></span><br><span class="line">docker -v  <span class="comment">#查看 docker 版本</span></span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> docker  <span class="comment"># 设置开机自动启动</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装 Docker-compose（非大陆服务器）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">docker-compose --version  <span class="comment">#查看 docker-compose 版本</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安装 Docker（国内服务器）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line"></span><br><span class="line">docker -v  <span class="comment">#查看 docker 版本</span></span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> docker  <span class="comment"># 设置开机自动启动</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>安装 Docker-compose（国内服务器）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-`<span class="built_in">uname</span> -s`-`<span class="built_in">uname</span> -m` &gt; /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">docker-compose --version  <span class="comment">#查看 docker-compose 版本</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>修改 Docker 配置（可选）</li>
+</ol>
+<p>以下配置会增加一段自定义内网 IPv6 地址，开启容器的 IPv6 功能，以及限制日志文件大小，防止 Docker 日志塞满硬盘（泪的教训）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/docker/daemon.json &lt;&lt;EOF</span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"><span class="attr">&quot;log-driver&quot;</span><span class="punctuation">:</span> <span class="string">&quot;json-file&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;log-opts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;max-size&quot;</span><span class="punctuation">:</span> <span class="string">&quot;20m&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;max-file&quot;</span><span class="punctuation">:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;ipv6&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;fixed-cidr-v6&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fd00:dead:beef:c0::/80&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;experimental&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;ip6tables&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p>然后重启 Docker 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="📥安装-Nginx-Proxy-Manager"><a href="#📥安装-Nginx-Proxy-Manager" class="headerlink" title="📥安装 Nginx Proxy Manager"></a>📥安装 Nginx Proxy Manager</h3><ol>
+<li>创建安装目录</li>
+</ol>
+<p>创建一下安装的目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /root/data/docker_data/npm</span><br><span class="line">        </span><br><span class="line"><span class="built_in">cd</span> /root/data/docker_data/npm</span><br></pre></td></tr></table></figure>
+
+<p>这边我们直接用 docker 的方式安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>英文输入法下，按 <code>i</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">app:</span></span><br><span class="line"><span class="attr">image:</span> <span class="string">&#x27;jc21/nginx-proxy-manager:latest&#x27;</span></span><br><span class="line"><span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line"><span class="attr">ports:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">&#x27;80:80&#x27;</span>  <span class="comment"># 冒号左边可以改成自己服务器未被占用的端口</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">&#x27;81:81&#x27;</span>  <span class="comment"># 冒号左边可以改成自己服务器未被占用的端口</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">&#x27;443:443&#x27;</span> <span class="comment"># 冒号左边可以改成自己服务器未被占用的端口</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">./data:/data</span> <span class="comment"># 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">./letsencrypt:/etc/letsencrypt</span>  <span class="comment"># 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中</span></span><br></pre></td></tr></table></figure>
+
+<p>按一下 <code>esc</code>，然后 :<code>wq</code> 保存退出，之后，</p>
+<ol start="2">
+<li>打开服务器防火墙并访问网页（非必需）</li>
+</ol>
+<p>打开防火墙的端口 <mark class="label info">81</mark></p>
+<p>查看端口是否被占用，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:81  <span class="comment">#查看81端口是否被占用，如果被占用，重新自定义一个端口</span></span><br></pre></td></tr></table></figure>
+
+<p>如果出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-bash: lsof: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install lsof  <span class="comment">#安装lsof</span></span><br></pre></td></tr></table></figure>
+
+<p>如果端口没有被占用，可以运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>如果端口没有被占用（被占用了就修改一下端口，比如改成 <mark class="label info">82</mark> ，注意 docker 命令行里和防火墙都要改）</p>
+<ol start="3">
+<li>运行并访问 Nginx Proxy Manager</li>
+</ol>
+<p>最后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/npm   <span class="comment"># 来到 dockercompose 文件所在的文件夹下</span></span><br><span class="line"></span><br><span class="line">docker-compose up -d </span><br></pre></td></tr></table></figure>
+
+<p>理论上我们就可以输入 <mark class="label info"><http://ip:81></mark> 访问了。</p>
+<p>默认登陆名和密码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Email:    admin@example.com</span><br><span class="line">Password: changeme</span><br></pre></td></tr></table></figure>
+
+<h3 id="⬆️更新-Nginx-Proxy-Manager"><a href="#⬆️更新-Nginx-Proxy-Manager" class="headerlink" title="⬆️更新 Nginx Proxy Manager"></a>⬆️更新 Nginx Proxy Manager</h3><p>逐条执行以下命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">docker-compose down </span><br><span class="line"></span><br><span class="line"><span class="built_in">cp</span> -r /root/data/docker_data/npm /root/data/docker_data/npm.archive  <span class="comment"># 万事先备份，以防万一</span></span><br><span class="line"></span><br><span class="line">docker-compose pull</span><br><span class="line"></span><br><span class="line">docker-compose up -d    <span class="comment"># 请不要使用 docker-compose stop 来停止容器，因为这么做需要额外的时间等待容器停止；docker-compose up -d 直接升级容器时会自动停止并立刻重建新的容器，完全没有必要浪费那些时间。</span></span><br><span class="line"></span><br><span class="line">docker image prune  <span class="comment"># prune 命令用来删除不再使用的 docker 对象。删除所有未被 tag 标记和未被容器使用的镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WARNING! This will remove all dangling images.</span><br><span class="line">Are you sure you want to <span class="built_in">continue</span>? [y/N]</span><br></pre></td></tr></table></figure>
+
+<p>输入 <code>y</code></p>
+<h3 id="❌卸载-Nginx-Proxy-Manager"><a href="#❌卸载-Nginx-Proxy-Manager" class="headerlink" title="❌卸载 Nginx Proxy Manager"></a>❌卸载 Nginx Proxy Manager</h3><p>逐条执行以下命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/npm</span><br><span class="line"></span><br><span class="line">docker-compose down </span><br><span class="line"></span><br><span class="line"><span class="built_in">rm</span> -rf /root/data/docker_data/npm  <span class="comment"># 完全删除映射到本地的数据</span></span><br></pre></td></tr></table></figure>
+
+<p>可以卸载得很干净。</p>
+<h2 id="⭐最后"><a href="#⭐最后" class="headerlink" title="⭐最后"></a>⭐最后</h2><hr>
+<p>NPM的功能还有很多，预计还有两期，一期讲泛域名证书的配置，一期讲安全防护，这次只是简单介绍一下，大家可以发挥钻研精神，自己先研究研究。</p>
+<p>有了NPM，可以统一管理，的确方便了很多，但总觉得还缺少点什么？有没有类似NPM这种有UI界面的工具，可以让我们直观地看到Docker的容器呢？Docker容器如果也可以统一管理，查看状态就很棒，别急，下期给大家带来！</p>
+<hr>
+<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL25naW54cHJveHltYW5hZ2VyLw==">【Docker 系列】一个反向代理神器 ——Nginx Proxy Manager<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i> Web</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_telegram"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_copy_link"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/readerdeploy/" rel="prev" title="自建阅读WEB版教程">
+                  <i class="fa fa-angle-left"></i> 自建阅读WEB版教程
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/domain/" rel="next" title="域名购买、域名解析">
+                  域名购买、域名解析 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2021 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa-solid fa-star fa-flip"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Brian</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">6k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">21 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.20/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
