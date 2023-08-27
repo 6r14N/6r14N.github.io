@@ -211,85 +211,6 @@
       </tags>
   </entry>
   <entry>
-    <title>自建阅读WEB版教程</title>
-    <url>/readerdeploy/</url>
-    <content><![CDATA[<h1 id="📖Reader教程"><a href="#📖Reader教程" class="headerlink" title="📖Reader教程"></a>📖Reader教程</h1><hr>
-<p>安卓手机APP<code>阅读3</code>服务器版，桌面端。<br>后端 <code>Kotlin</code> + <code>Spring Boot</code> + <code>Vert.x</code> + <code>Coroutine</code> ；<br>前端 <code>Vue.js</code> + <code>Element</code>。<br>GitHub 开源项目，支持Docker搭建。</p>
-<span id="more"></span>
-
-<div class="note warning"><h2 id="切记"><a href="#切记" class="headerlink" title="切记"></a>切记</h2><p><strong>以下服务器和域名均在海外搭建以及购买</strong><br><strong>如果在中国大陆搭建，请遵守当地法律并进行备案</strong></p>
-</div>
-
-<h2 id="❓搭建环境"><a href="#❓搭建环境" class="headerlink" title="❓搭建环境"></a>❓搭建环境</h2><hr>
-<div class="note default"><ul>
-<li><p>服务器，按小时计费，可随时销毁（最好是选非大陆的服务器）</p>
-</li>
-<li><p>系统：Debian 10</p>
-</li>
-<li><p>域名一枚，并做好解析到服务器上</p>
-</li>
-<li><p>安装好Docker、Docker-compose</p>
-</li>
-</ul>
-</div>
-
-<h2 id="⚙️搭建方式"><a href="#⚙️搭建方式" class="headerlink" title="⚙️搭建方式"></a>⚙️搭建方式</h2><hr>
-<h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><p>服务器初始设置，参考：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i <span class="comment"># 切换到root用户</span></span><br><span class="line"></span><br><span class="line">apt update -y  <span class="comment"># 升级packages</span></span><br><span class="line"></span><br><span class="line">apt install wget curl sudo vim git  <span class="comment"># Debian系统比较干净，安装常用的软件</span></span><br></pre></td></tr></table></figure>
-
-<p>创建一下安装的目录：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p data/docker_data/reader</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> data/docker_data/reader</span><br><span class="line"></span><br><span class="line">nano docker-compose.yml</span><br></pre></td></tr></table></figure>
-
-<mark class="label info">docker-compose.yml</mark> 内容如下：
-
-  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.1&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reader 在线阅读</span></span><br><span class="line"><span class="comment"># 书源参考 : https://github.com/NZESupB/ReadSource,书源合集下选一个合集进入网页后, Ctrl+S 保存至本地后导入网站即可,或者点击远程书源,将链接导入即可</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader java -jar /app/bin/reader.jar --spring.profiles.active=prod --reader.app.secure=true --reader.app.secureKey=管理密码 --reader.app.inviteCode=注册邀请码</span></span><br><span class="line"><span class="comment"># 多用户版 使用环境变量</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -e &quot;READER_APP_SECURE=true&quot; -e &quot;READER_APP_SECUREKEY=管理密码&quot; -e &quot;READER_APP_INVITECODE=注册邀请码&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自用版</span></span><br><span class="line"><span class="comment">#  read_own:</span></span><br><span class="line"><span class="comment">#    image: hectorqin/reader</span></span><br><span class="line"><span class="comment">#    container_name: reader_own</span></span><br><span class="line"><span class="comment">#    restart: always</span></span><br><span class="line"><span class="comment">#    ports:</span></span><br><span class="line"><span class="comment">#      - 4395:8080</span></span><br><span class="line"><span class="comment">#    volumes:</span></span><br><span class="line"><span class="comment">#      - /home/reader/logs:/logs</span></span><br><span class="line"><span class="comment">#      - /home/reader/storage:/storage</span></span><br><span class="line"><span class="comment">#    environment:</span></span><br><span class="line"><span class="comment">#      - SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line"><span class="comment">#      - READER_APP_CACHECHAPTERCONTENT=true #是否开启缓存章节内容 V2.0</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="attr">read_all:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">hectorqin/reader</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">reader</span> <span class="comment">#容器名 可自行修改</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">4396</span><span class="string">:8080</span> <span class="comment">#4396端口映射可自行修改</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/logs:/logs</span> <span class="comment">#log映射目录 /root/data/docker_data/reader/logs 映射目录可自行修改</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/storage:/storage</span> <span class="comment">#数据映射目录 /root/data/docker_data/reader/storage 映射目录可自行修改</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECURE=true</span> <span class="comment">#开启登录鉴权，开启后将支持多用户模式</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_CACHECHAPTERCONTENT=true</span> <span class="comment">#是否开启缓存章节内容 V2.0</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECUREKEY=adminpwd</span>  <span class="comment">#管理员密码  可自行修改</span></span><br><span class="line">    <span class="comment">#- READER_APP_INVITECODE=registercode #注册邀请码,如需要取消注释 可自行修改</span></span><br><span class="line">    <span class="comment"># 自动更新docker</span></span><br><span class="line"><span class="attr">watchtower:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">containrrr/watchtower</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">watchtower</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="comment"># 环境变量,设置为上海时区</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">reader</span> <span class="string">watchtower</span> <span class="string">--cleanup</span> <span class="string">--schedule</span> <span class="string">&quot;0 0 4 * * *&quot;</span></span><br><span class="line">    <span class="comment"># 仅更新reader与watchtower容器,如需其他自行添加 &#x27;容器名&#x27; ,如:reader watchtower redis</span></span><br><span class="line">    <span class="comment"># --cleanup 更新后清理旧版本镜像</span></span><br><span class="line">    <span class="comment"># --schedule 自动检测更新 crontab定时(限定6位crontab) 此处代表凌晨4点整</span></span><br></pre></td></tr></table></figure>
-
-<p>没问题的话，<mark class="label info">docker-compose.yml</mark> 退出，按<code>y</code>保存，<code>enter</code>确认。</p>
-<p>查看端口是否被占用，输入：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsof -i:4396  <span class="comment">#查看4396端口是否被占用，如果被占用，重新自定义一个端口</span></span><br></pre></td></tr></table></figure>
-
-<p>如果出现：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-bash: lsof: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
-
-<p>运行：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install lsof  <span class="comment">#安装lsof</span></span><br></pre></td></tr></table></figure>
-
-<p>如果端口没有被占用，可以运行：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>访问： <mark class="label info">http:ip:4396</mark> 即可。</p>
-<h3 id="⬆️更新"><a href="#⬆️更新" class="headerlink" title="⬆️更新"></a>⬆️更新</h3>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose pull    <span class="comment"># 拉取最新的镜像</span></span><br><span class="line"></span><br><span class="line">docker-compose up -d   <span class="comment"># 重新更新当前镜像</span></span><br></pre></td></tr></table></figure>
-
-<p>利用Docker-compose搭建的应用，更新非常容易</p>
-<h3 id="❌卸载"><a href="#❌卸载" class="headerlink" title="❌卸载"></a>❌卸载</h3>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i  <span class="comment"># 切换到root</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose down    <span class="comment"># 停止容器，此时不会删除映射到本地的数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">    </span><br><span class="line"><span class="built_in">rm</span> -rf /root/data/docker_data/reader  <span class="comment"># 完全删除映射到本地的数据</span></span><br></pre></td></tr></table></figure>
-
-<p>利用Docker-compose搭建的应用，删除也非常容易</p>
-<h2 id="☁️反向代理（必须）"><a href="#☁️反向代理（必须）" class="headerlink" title="☁️反向代理（必须）"></a>☁️反向代理（必须）</h2><hr>
-<h3 id="利用Nginx-Proxy-Manager"><a href="#利用Nginx-Proxy-Manager" class="headerlink" title="利用Nginx Proxy Manager"></a>利用Nginx Proxy Manager</h3><p>在添加反向代理之前，确保你已经完成了域名解析，不会的可以看这个：域名一枚，并做好解析到服务器上（<a href="../domain">域名购买、域名解析</a>）</p>
-<p>之后，登陆Nginx Proxy Manager。（不会的看这个：安装Nginx Proxy Manager（<a href="../installNPM">相关教程</a>））</p>
-<div class="note danger"><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Nginx Proxy Manager（以下简称NPM）会用到 <mark class="label info">80</mark>、<mark class="label info">443</mark> 端口，所以本机不能占用（比如原来就有Nginx）</p>
-</div>
-
-<p>直接丢几张图：<br><img data-src="/readerdeploy/addproxy1.png" alt="addproxy1" title="addproxy1"><br><img data-src="/readerdeploy/addproxy2.png" alt="addproxy2" title="addproxy2"><br>注意填写对应的 <mark class="label info">域名</mark> 、 <mark class="label info">IP</mark> 和 <mark class="label info">端口</mark> ，按文章来的话，应该是 <mark class="label success">4396</mark></p>
-<p>IP填写：</p>
-<p>如果Nginx Proxy Manager和reader在同一台服务器上，可以在终端输入:</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip addr show docker0</span><br></pre></td></tr></table></figure>
-
-<p>查看对应的Docker容器内部IP。</p>
-<p>否则直接填 <mark class="label info">cryptgeon所在的服务器IP</mark> 就行。</p>
-<hr>
-<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Book</category>
-        <category>Reader</category>
-        <category>Deploy</category>
-      </categories>
-      <tags>
-        <tag>Book</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自建阅读WEB版-Reader</title>
     <url>/reader/</url>
     <content><![CDATA[<h1 id="📖Reader"><a href="#📖Reader" class="headerlink" title="📖Reader"></a>📖Reader</h1><hr>
@@ -435,6 +356,85 @@
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自建阅读WEB版教程</title>
+    <url>/readerdeploy/</url>
+    <content><![CDATA[<h1 id="📖Reader教程"><a href="#📖Reader教程" class="headerlink" title="📖Reader教程"></a>📖Reader教程</h1><hr>
+<p>安卓手机APP<code>阅读3</code>服务器版，桌面端。<br>后端 <code>Kotlin</code> + <code>Spring Boot</code> + <code>Vert.x</code> + <code>Coroutine</code> ；<br>前端 <code>Vue.js</code> + <code>Element</code>。<br>GitHub 开源项目，支持Docker搭建。</p>
+<span id="more"></span>
+
+<div class="note warning"><h2 id="切记"><a href="#切记" class="headerlink" title="切记"></a>切记</h2><p><strong>以下服务器和域名均在海外搭建以及购买</strong><br><strong>如果在中国大陆搭建，请遵守当地法律并进行备案</strong></p>
+</div>
+
+<h2 id="❓搭建环境"><a href="#❓搭建环境" class="headerlink" title="❓搭建环境"></a>❓搭建环境</h2><hr>
+<div class="note default"><ul>
+<li><p>服务器，按小时计费，可随时销毁（最好是选非大陆的服务器）</p>
+</li>
+<li><p>系统：Debian 10</p>
+</li>
+<li><p>域名一枚，并做好解析到服务器上</p>
+</li>
+<li><p>安装好Docker、Docker-compose</p>
+</li>
+</ul>
+</div>
+
+<h2 id="⚙️搭建方式"><a href="#⚙️搭建方式" class="headerlink" title="⚙️搭建方式"></a>⚙️搭建方式</h2><hr>
+<h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><p>服务器初始设置，参考：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i <span class="comment"># 切换到root用户</span></span><br><span class="line"></span><br><span class="line">apt update -y  <span class="comment"># 升级packages</span></span><br><span class="line"></span><br><span class="line">apt install wget curl sudo vim git  <span class="comment"># Debian系统比较干净，安装常用的软件</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一下安装的目录：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p data/docker_data/reader</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> data/docker_data/reader</span><br><span class="line"></span><br><span class="line">nano docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<mark class="label info">docker-compose.yml</mark> 内容如下：
+
+  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.1&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reader 在线阅读</span></span><br><span class="line"><span class="comment"># 书源参考 : https://github.com/NZESupB/ReadSource,书源合集下选一个合集进入网页后, Ctrl+S 保存至本地后导入网站即可,或者点击远程书源,将链接导入即可</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader java -jar /app/bin/reader.jar --spring.profiles.active=prod --reader.app.secure=true --reader.app.secureKey=管理密码 --reader.app.inviteCode=注册邀请码</span></span><br><span class="line"><span class="comment"># 多用户版 使用环境变量</span></span><br><span class="line"><span class="comment">#docker run -d --restart=always --name=reader -e &quot;SPRING_PROFILES_ACTIVE=prod&quot; -e &quot;READER_APP_SECURE=true&quot; -e &quot;READER_APP_SECUREKEY=管理密码&quot; -e &quot;READER_APP_INVITECODE=注册邀请码&quot; -v $(pwd)/logs:/logs -v $(pwd)/storage:/storage -p 8080:8080 hectorqin/reader</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自用版</span></span><br><span class="line"><span class="comment">#  read_own:</span></span><br><span class="line"><span class="comment">#    image: hectorqin/reader</span></span><br><span class="line"><span class="comment">#    container_name: reader_own</span></span><br><span class="line"><span class="comment">#    restart: always</span></span><br><span class="line"><span class="comment">#    ports:</span></span><br><span class="line"><span class="comment">#      - 4395:8080</span></span><br><span class="line"><span class="comment">#    volumes:</span></span><br><span class="line"><span class="comment">#      - /home/reader/logs:/logs</span></span><br><span class="line"><span class="comment">#      - /home/reader/storage:/storage</span></span><br><span class="line"><span class="comment">#    environment:</span></span><br><span class="line"><span class="comment">#      - SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line"><span class="comment">#      - READER_APP_CACHECHAPTERCONTENT=true #是否开启缓存章节内容 V2.0</span></span><br><span class="line"><span class="comment"># 多用户版</span></span><br><span class="line"><span class="attr">read_all:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">hectorqin/reader</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">reader</span> <span class="comment">#容器名 可自行修改</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="number">4396</span><span class="string">:8080</span> <span class="comment">#4396端口映射可自行修改</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/logs:/logs</span> <span class="comment">#log映射目录 /root/data/docker_data/reader/logs 映射目录可自行修改</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/root/data/docker_data/reader/storage:/storage</span> <span class="comment">#数据映射目录 /root/data/docker_data/reader/storage 映射目录可自行修改</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">SPRING_PROFILES_ACTIVE=prod</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECURE=true</span> <span class="comment">#开启登录鉴权，开启后将支持多用户模式</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_CACHECHAPTERCONTENT=true</span> <span class="comment">#是否开启缓存章节内容 V2.0</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">READER_APP_SECUREKEY=adminpwd</span>  <span class="comment">#管理员密码  可自行修改</span></span><br><span class="line">    <span class="comment">#- READER_APP_INVITECODE=registercode #注册邀请码,如需要取消注释 可自行修改</span></span><br><span class="line">    <span class="comment"># 自动更新docker</span></span><br><span class="line"><span class="attr">watchtower:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">containrrr/watchtower</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">watchtower</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="comment"># 环境变量,设置为上海时区</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">TZ=Asia/Shanghai</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">reader</span> <span class="string">watchtower</span> <span class="string">--cleanup</span> <span class="string">--schedule</span> <span class="string">&quot;0 0 4 * * *&quot;</span></span><br><span class="line">    <span class="comment"># 仅更新reader与watchtower容器,如需其他自行添加 &#x27;容器名&#x27; ,如:reader watchtower redis</span></span><br><span class="line">    <span class="comment"># --cleanup 更新后清理旧版本镜像</span></span><br><span class="line">    <span class="comment"># --schedule 自动检测更新 crontab定时(限定6位crontab) 此处代表凌晨4点整</span></span><br></pre></td></tr></table></figure>
+
+<p>没问题的话，<mark class="label info">docker-compose.yml</mark> 退出，按<code>y</code>保存，<code>enter</code>确认。</p>
+<p>查看端口是否被占用，输入：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lsof -i:4396  <span class="comment">#查看4396端口是否被占用，如果被占用，重新自定义一个端口</span></span><br></pre></td></tr></table></figure>
+
+<p>如果出现：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-bash: lsof: <span class="built_in">command</span> not found</span><br></pre></td></tr></table></figure>
+
+<p>运行：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt install lsof  <span class="comment">#安装lsof</span></span><br></pre></td></tr></table></figure>
+
+<p>如果端口没有被占用，可以运行：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>访问： <mark class="label info">http:ip:4396</mark> 即可。</p>
+<h3 id="⬆️更新"><a href="#⬆️更新" class="headerlink" title="⬆️更新"></a>⬆️更新</h3>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose pull    <span class="comment"># 拉取最新的镜像</span></span><br><span class="line"></span><br><span class="line">docker-compose up -d   <span class="comment"># 重新更新当前镜像</span></span><br></pre></td></tr></table></figure>
+
+<p>利用Docker-compose搭建的应用，更新非常容易</p>
+<h3 id="❌卸载"><a href="#❌卸载" class="headerlink" title="❌卸载"></a>❌卸载</h3>  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i  <span class="comment"># 切换到root</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /root/data/docker_data/reader  <span class="comment"># 进入docker-compose所在的文件夹</span></span><br><span class="line"></span><br><span class="line">docker-compose down    <span class="comment"># 停止容器，此时不会删除映射到本地的数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">    </span><br><span class="line"><span class="built_in">rm</span> -rf /root/data/docker_data/reader  <span class="comment"># 完全删除映射到本地的数据</span></span><br></pre></td></tr></table></figure>
+
+<p>利用Docker-compose搭建的应用，删除也非常容易</p>
+<h2 id="☁️反向代理（必须）"><a href="#☁️反向代理（必须）" class="headerlink" title="☁️反向代理（必须）"></a>☁️反向代理（必须）</h2><hr>
+<h3 id="利用Nginx-Proxy-Manager"><a href="#利用Nginx-Proxy-Manager" class="headerlink" title="利用Nginx Proxy Manager"></a>利用Nginx Proxy Manager</h3><p>在添加反向代理之前，确保你已经完成了域名解析，不会的可以看这个：域名一枚，并做好解析到服务器上（<a href="../domain">域名购买、域名解析</a>）</p>
+<p>之后，登陆Nginx Proxy Manager。（不会的看这个：安装Nginx Proxy Manager（<a href="../installNPM">相关教程</a>））</p>
+<div class="note danger"><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Nginx Proxy Manager（以下简称NPM）会用到 <mark class="label info">80</mark>、<mark class="label info">443</mark> 端口，所以本机不能占用（比如原来就有Nginx）</p>
+</div>
+
+<p>直接丢几张图：<br><img data-src="/readerdeploy/addproxy1.png" alt="addproxy1" title="addproxy1"><br><img data-src="/readerdeploy/addproxy2.png" alt="addproxy2" title="addproxy2"><br>注意填写对应的 <mark class="label info">域名</mark> 、 <mark class="label info">IP</mark> 和 <mark class="label info">端口</mark> ，按文章来的话，应该是 <mark class="label success">4396</mark></p>
+<p>IP填写：</p>
+<p>如果Nginx Proxy Manager和reader在同一台服务器上，可以在终端输入:</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ip addr show docker0</span><br></pre></td></tr></table></figure>
+
+<p>查看对应的Docker容器内部IP。</p>
+<p>否则直接填 <mark class="label info">cryptgeon所在的服务器IP</mark> 就行。</p>
+<hr>
+<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Book</category>
+        <category>Reader</category>
+        <category>Deploy</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
       </tags>
   </entry>
   <entry>
