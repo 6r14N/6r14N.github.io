@@ -211,46 +211,6 @@
       </tags>
   </entry>
   <entry>
-    <title>自建阅读WEB版-Reader</title>
-    <url>/reader/</url>
-    <content><![CDATA[<h1 id="📖Reader"><a href="#📖Reader" class="headerlink" title="📖Reader"></a>📖Reader</h1><hr>
-<p>阅读3服务器版，不需要手机。</p>
-<span id="more"></span>
-
-<h2 id="💡教程"><a href="#💡教程" class="headerlink" title="💡教程"></a>💡教程</h2><hr>
-<ol>
-<li><p>Reader Web版来自Github的项目<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlY3RvcnFpbi9yZWFkZXI=">hectorqin&#x2F;reader<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li><mark class="label success">推荐可使用AWS或者AZ</mark>
-<p> ✅自备服务器建站教程（推荐使用Microsoft Azure）：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
-<p> ✅<a href="../readerdeploy">备份教程</a></p>
-</li>
-<li><mark class="label danger">并不推荐以下方法</mark>
-<p> <del>❌免费docker服务器建站教程<span class="exturl" data-url="aHR0cHM6Ly9tcC53ZWl4aW4ucXEuY29tL3M/X19iaXo9TXpBNU5qRXdOakUwT1E9PSZtaWQ9MjI0NzUwNzY0NSZpZHg9MSZzbj04NWRlZGFjMDAyZTEzZWJkOTRmZDEzOThkYzg4MTBjOSZjaGtzbT05MGI3YmQ3N2E3YzAzNDYxNWMxMjJiYzI5NTI2NmMyYzRhYjJmZjFhYWY5YzNmOWEzODViMzgyZTBmNWE4MmE5NjdjYjI2Y2RmYTE5JmN1cl9hbGJ1bV9pZD0xNTIzNzE3OTAxMzAyNzEwMjczJnNjZW5lPTIxI3dlY2hhdF9yZWRpcmVjdA==">这款最强网文神器竟然出网页版了！！5分钟教你完全免费搭建一个 - 阿虚同学<i class="fa fa-external-link-alt"></i></span></del></p>
-<div class="note info"><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>Koyeb建站会不定时重置<br>Railway每个月有500小时的时间限制</p>
-</div>
-</li>
-<li><p>阅读书源：<span class="exturl" data-url="aHR0cHM6Ly95dWVkdS54aXUyLnh5ei8=">点击这里 每月更新<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ol>
-<h2 id="🖼️样例"><a href="#🖼️样例" class="headerlink" title="🖼️样例"></a>🖼️样例</h2><hr>
-<ul>
-<li><p>样例链接：<span class="exturl" data-url="aHR0cHM6Ly9yZWFkZXIuaHRtYWtlLmNvbS8=">点击这里<i class="fa fa-external-link-alt"></i></span></p>
-<p>  阅读WEB样例: <img data-src="/reader/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
-</li>
-</ul>
-<hr>
-<p>Authored by Brian</p>
-]]></content>
-      <categories>
-        <category>Book</category>
-        <category>Reader</category>
-      </categories>
-      <tags>
-        <tag>Book</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装Nginx Proxy Manager</title>
     <url>/installNPM/</url>
     <content><![CDATA[<h1 id="Nginx-Proxy-Manager"><a href="#Nginx-Proxy-Manager" class="headerlink" title="Nginx Proxy Manager"></a>Nginx Proxy Manager</h1><hr>
@@ -356,6 +316,46 @@
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自建阅读WEB版-Reader</title>
+    <url>/reader/</url>
+    <content><![CDATA[<h1 id="📖Reader"><a href="#📖Reader" class="headerlink" title="📖Reader"></a>📖Reader</h1><hr>
+<p>阅读3服务器版，不需要手机。</p>
+<span id="more"></span>
+
+<h2 id="💡教程"><a href="#💡教程" class="headerlink" title="💡教程"></a>💡教程</h2><hr>
+<ol>
+<li><p>Reader Web版来自Github的项目<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlY3RvcnFpbi9yZWFkZXI=">hectorqin&#x2F;reader<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><mark class="label success">推荐可使用AWS或者AZ</mark>
+<p> ✅自备服务器建站教程（推荐使用Microsoft Azure）：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
+<p> ✅<a href="../readerdeploy">备份教程</a></p>
+</li>
+<li><mark class="label danger">并不推荐以下方法</mark>
+<p> <del>❌免费docker服务器建站教程<span class="exturl" data-url="aHR0cHM6Ly9tcC53ZWl4aW4ucXEuY29tL3M/X19iaXo9TXpBNU5qRXdOakUwT1E9PSZtaWQ9MjI0NzUwNzY0NSZpZHg9MSZzbj04NWRlZGFjMDAyZTEzZWJkOTRmZDEzOThkYzg4MTBjOSZjaGtzbT05MGI3YmQ3N2E3YzAzNDYxNWMxMjJiYzI5NTI2NmMyYzRhYjJmZjFhYWY5YzNmOWEzODViMzgyZTBmNWE4MmE5NjdjYjI2Y2RmYTE5JmN1cl9hbGJ1bV9pZD0xNTIzNzE3OTAxMzAyNzEwMjczJnNjZW5lPTIxI3dlY2hhdF9yZWRpcmVjdA==">这款最强网文神器竟然出网页版了！！5分钟教你完全免费搭建一个 - 阿虚同学<i class="fa fa-external-link-alt"></i></span></del></p>
+<div class="note info"><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>Koyeb建站会不定时重置<br>Railway每个月有500小时的时间限制</p>
+</div>
+</li>
+<li><p>阅读书源：<span class="exturl" data-url="aHR0cHM6Ly95dWVkdS54aXUyLnh5ei8=">点击这里 每月更新<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ol>
+<h2 id="🖼️样例"><a href="#🖼️样例" class="headerlink" title="🖼️样例"></a>🖼️样例</h2><hr>
+<ul>
+<li><p>样例链接：<span class="exturl" data-url="aHR0cHM6Ly9yZWFkZXIuaHRtYWtlLmNvbS8=">点击这里<i class="fa fa-external-link-alt"></i></span></p>
+<p>  阅读WEB样例: <img data-src="/reader/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
+</li>
+</ul>
+<hr>
+<p>Authored by Brian</p>
+]]></content>
+      <categories>
+        <category>Book</category>
+        <category>Reader</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
       </tags>
   </entry>
   <entry>
