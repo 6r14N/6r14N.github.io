@@ -1,102 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Welcome to Brian的小窝</title>
-    <url>/announcement/</url>
-    <content><![CDATA[<h1 id="Announcement"><a href="#Announcement" class="headerlink" title="Announcement"></a>Announcement</h1><p>域名 <del>brianwl.top</del> 已过期</p>
-<p>以后请使用 <strong><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLjZyMTRuLmNvbS8=">blog.6r14n.com<i class="fa fa-external-link-alt"></i></span></strong></p>
-<h2 id="作者留下的话"><a href="#作者留下的话" class="headerlink" title="作者留下的话"></a>作者留下的话</h2><p>欢迎来到Brian的小窝，我会这里分享一些使用技巧。<br>请持续关注我的Blog。</p>
-]]></content>
-      <categories>
-        <category>Announcement</category>
-      </categories>
-      <tags>
-        <tag>Announcement</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>域名购买、域名解析</title>
-    <url>/domain/</url>
-    <content><![CDATA[<h1 id="🔗Namesilo"><a href="#🔗Namesilo" class="headerlink" title="🔗Namesilo"></a>🔗Namesilo</h1><hr>
-<p>Namesilo是国外最大的ICANN认证域名提供商之一，以物美价廉的优势积累了不错的口碑。费用方面，其域名注册费用相较国内来说便宜不少。</p>
-<span id="more"></span>
-
-<p>拿阿里云万网对比：</p>
-<mark class="label info">.com</mark> 的域名，万网的注册费用是69元首年，续费79元每年；
-
-<p>Namesilo是$10.95，按7的汇率，也就是￥77每年，续费价格不变，续费价格不变！！续费价格不变！！！</p>
-<p>而且第一次注册还可以使用优惠码（优惠码及使用方法在下文），降低1美元。也就是说可降至70元。(之前我有买 <mark class="label info">.top</mark> 的域名，首付只要$1.88，第二年付费需$4.88，很香)</p>
-<p>而且，Namesilo的注册购买也很方便。在国内域名商注册使用域名需要各种实名认证，比如万网，账户和域名都要单独各认证一次，比较麻烦。</p>
-<p>而Namesilo完全没有这些步骤，直接注册购买了就能使用，不用那么麻烦。</p>
-<p>namesilo不仅价格优势明显，更重要的是：</p>
-<ol>
-<li><p>没有隐藏费用，续订费用不会增加。</p>
-</li>
-<li><p>终身免费的WHOIS Guard。</p>
-</li>
-<li><p>后台管理方便。</p>
-</li>
-<li><p>高级别的安全防护，保护你的域名。</p>
-</li>
-<li><p>免费域名停放服务。</p>
-</li>
-<li><p>可以使用支付宝付款，甚至还可以使用比特币。</p>
-</li>
-</ol>
-<p>唯一要吐槽的就是页面的风格像是10年前的，好老，不过最近他们有计划更新了官网首页，后台还是很古老的界面…</p>
-<p>下面来讲一下，如何在Namesilo注册购买域名。</p>
-<h2 id="❓如何使用Namesilo优惠码购买域名？"><a href="#❓如何使用Namesilo优惠码购买域名？" class="headerlink" title="❓如何使用Namesilo优惠码购买域名？"></a>❓如何使用Namesilo优惠码购买域名？</h2><hr>
-<ol>
-<li><p>首先访问<span class="exturl" data-url="aHR0cHM6Ly93d3cubmFtZXNpbG8uY29tLw==">namesilo官网<i class="fa fa-external-link-alt"></i></span>，如下图所示。<br><img data-src="/domain/namesilo.png" alt="namesilo" title="namesilo"></p>
-</li>
-<li><p>输入你想购买的域名，蓝色是还能注册，橙色是已被人注册不能再注册，选好后点蓝色按钮。<br><img data-src="/domain/choosedomain.png" alt="选择域名" title="选择域名"></p>
-</li>
-<li><p>接下来会有一个Premium DNS的购买选项，我自己的几个域名都没有购买，直接选的No, I don’t want to protect my domain。</p>
-</li>
-<li><p><del>输入namesilo优惠码： <mark class="label info">?</mark> ,可以优惠1美元。需要注意的是，同一账号多次购买域名，优惠码会无效。</del></p>
-</li>
-<li><p>接下来填写账号信息，填个大概就行，只用填带星号的，邮箱请用常用邮箱。</p>
-</li>
-<li><p>选择支付宝付款，支付宝那里的邮箱是指你的联系邮箱，随便填一个你常用的邮箱就可以了。</p>
-</li>
-<li><p>购买成功后，你会收到官方发来的邮件。</p>
-</li>
-</ol>
-<h2 id="💡Namesilo域名解析教程"><a href="#💡Namesilo域名解析教程" class="headerlink" title="💡Namesilo域名解析教程"></a>💡Namesilo域名解析教程</h2><hr>
-<p>域名购买完，如果你想自己建个网站，接下来有两件事情要做。</p>
-<ul>
-<li>购买主机</li>
-<li>域名解析</li>
-</ul>
-<h3 id="购买主机"><a href="#购买主机" class="headerlink" title="购买主机"></a>购买主机</h3><p>国内服务器最大的优势就是延迟比较低，不过需要备案，而且后续价格会贵一点。</p>
-<p>国外主机的优点是不用备案，但是访问的延迟会高一些。</p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>首先登陆namesilo账号，右上角点Manage My Domains，<br><img data-src="/domain/ManageMyDomains.webp" alt="Manage My Domains" title="Manage My Domains"></p>
-<p>然后点下图标记的蓝色圆球。<br><img data-src="/domain/domainmanger.webp" alt="域名管理" title="域名管理"></p>
-<p>下图里的记录是namesilo的默认记录，全部删除就行，后面我们再来添加新的A记录。<br><img data-src="/domain/managerdns.webp" alt="DNS管理" title="DNS管理"></p>
-<p>新加一条 <mark class="label info">A</mark> 记录， <mark class="label info">TTL</mark> 用默认的就行，如下图所示。<br><img data-src="/domain/addhostname.webp" alt="增加HOSTNAME" title="增加HOSTNAME"></p>
-<p>然后再新加一条 <mark class="label info">A</mark> 记录， <mark class="label info">HOSTNAME</mark> 填你随意想填写的内容，IP地址还是填服务器的公网IP地址。</p>
-<p>这边的话就是二级域名的概念了。</p>
-<p>假定你注册的域名是 <mark class="label info">google.com</mark> ,这里HOSTNAME你填了 <mark class="label info">blog</mark> ，那就表示， <mark class="label info">blog.google.com</mark> 这个二级域名解析到了你服务器上。</p>
-<p>你的一级域名是 <mark class="label info">google.com</mark> 。</p>
-<h2 id="⭐总结"><a href="#⭐总结" class="headerlink" title="⭐总结"></a>⭐总结</h2><hr>
-<p>刚开始注册购买域名，可能对域名费用不太在乎。</p>
-<p>但当你注册的域名越来越多时，你会发现域名费用也是一大笔钱。所以我们要选一家性价比最高的域名注册商。国外的话，Namesilo就是最佳选择。</p>
-<p>Namesilo域名价格全网最低，使用简单，安全级别高，后台管理方便，还有优惠码和免费的域名隐私保护，无论是新注册域名，还是域名续费都很划算。</p>
-<p>服务器的话，如果准备长期使用，而且网站访问的用户主要是国内人群，还是建议弄一台腾讯云或者阿里云的服务器，老老实实走备案，更稳定一些，当然你得发布健康的内容，不然查你水表，请你喝茶。</p>
-<p>买的服务如果不是大陆的话，就不用备案了，但也不要为所欲为，毕竟人还在国内，真要查你一样能找到你。怎么说呢，相对自由一些吧。</p>
-<hr>
-<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL25hbWVzaWxvLw==">【服务器、域名购买】Namesilo 优惠码和域名解析教程（附带服务器购买推荐和注意事项）<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>Domian</category>
-        <category>Namesilo</category>
-      </categories>
-      <tags>
-        <tag>Domian</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>创建个人Blog-Hexo</title>
     <url>/create-blog/</url>
     <content><![CDATA[<h1 id="📰静态博客-Hexo"><a href="#📰静态博客-Hexo" class="headerlink" title="📰静态博客-Hexo"></a>📰静态博客-Hexo</h1><hr>
@@ -191,6 +95,102 @@
       </categories>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Welcome to Brian的小窝</title>
+    <url>/announcement/</url>
+    <content><![CDATA[<h1 id="Announcement"><a href="#Announcement" class="headerlink" title="Announcement"></a>Announcement</h1><p>域名 <del>brianwl.top</del> 已过期</p>
+<p>以后请使用 <strong><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLjZyMTRuLmNvbS8=">blog.6r14n.com<i class="fa fa-external-link-alt"></i></span></strong></p>
+<h2 id="作者留下的话"><a href="#作者留下的话" class="headerlink" title="作者留下的话"></a>作者留下的话</h2><p>欢迎来到Brian的小窝，我会这里分享一些使用技巧。<br>请持续关注我的Blog。</p>
+]]></content>
+      <categories>
+        <category>Announcement</category>
+      </categories>
+      <tags>
+        <tag>Announcement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>域名购买、域名解析</title>
+    <url>/domain/</url>
+    <content><![CDATA[<h1 id="🔗Namesilo"><a href="#🔗Namesilo" class="headerlink" title="🔗Namesilo"></a>🔗Namesilo</h1><hr>
+<p>Namesilo是国外最大的ICANN认证域名提供商之一，以物美价廉的优势积累了不错的口碑。费用方面，其域名注册费用相较国内来说便宜不少。</p>
+<span id="more"></span>
+
+<p>拿阿里云万网对比：</p>
+<mark class="label info">.com</mark> 的域名，万网的注册费用是69元首年，续费79元每年；
+
+<p>Namesilo是$10.95，按7的汇率，也就是￥77每年，续费价格不变，续费价格不变！！续费价格不变！！！</p>
+<p>而且第一次注册还可以使用优惠码（优惠码及使用方法在下文），降低1美元。也就是说可降至70元。(之前我有买 <mark class="label info">.top</mark> 的域名，首付只要$1.88，第二年付费需$4.88，很香)</p>
+<p>而且，Namesilo的注册购买也很方便。在国内域名商注册使用域名需要各种实名认证，比如万网，账户和域名都要单独各认证一次，比较麻烦。</p>
+<p>而Namesilo完全没有这些步骤，直接注册购买了就能使用，不用那么麻烦。</p>
+<p>namesilo不仅价格优势明显，更重要的是：</p>
+<ol>
+<li><p>没有隐藏费用，续订费用不会增加。</p>
+</li>
+<li><p>终身免费的WHOIS Guard。</p>
+</li>
+<li><p>后台管理方便。</p>
+</li>
+<li><p>高级别的安全防护，保护你的域名。</p>
+</li>
+<li><p>免费域名停放服务。</p>
+</li>
+<li><p>可以使用支付宝付款，甚至还可以使用比特币。</p>
+</li>
+</ol>
+<p>唯一要吐槽的就是页面的风格像是10年前的，好老，不过最近他们有计划更新了官网首页，后台还是很古老的界面…</p>
+<p>下面来讲一下，如何在Namesilo注册购买域名。</p>
+<h2 id="❓如何使用Namesilo优惠码购买域名？"><a href="#❓如何使用Namesilo优惠码购买域名？" class="headerlink" title="❓如何使用Namesilo优惠码购买域名？"></a>❓如何使用Namesilo优惠码购买域名？</h2><hr>
+<ol>
+<li><p>首先访问<span class="exturl" data-url="aHR0cHM6Ly93d3cubmFtZXNpbG8uY29tLw==">namesilo官网<i class="fa fa-external-link-alt"></i></span>，如下图所示。<br><img data-src="/domain/namesilo.png" alt="namesilo" title="namesilo"></p>
+</li>
+<li><p>输入你想购买的域名，蓝色是还能注册，橙色是已被人注册不能再注册，选好后点蓝色按钮。<br><img data-src="/domain/choosedomain.png" alt="选择域名" title="选择域名"></p>
+</li>
+<li><p>接下来会有一个Premium DNS的购买选项，我自己的几个域名都没有购买，直接选的No, I don’t want to protect my domain。</p>
+</li>
+<li><p><del>输入namesilo优惠码： <mark class="label info">?</mark> ,可以优惠1美元。需要注意的是，同一账号多次购买域名，优惠码会无效。</del></p>
+</li>
+<li><p>接下来填写账号信息，填个大概就行，只用填带星号的，邮箱请用常用邮箱。</p>
+</li>
+<li><p>选择支付宝付款，支付宝那里的邮箱是指你的联系邮箱，随便填一个你常用的邮箱就可以了。</p>
+</li>
+<li><p>购买成功后，你会收到官方发来的邮件。</p>
+</li>
+</ol>
+<h2 id="💡Namesilo域名解析教程"><a href="#💡Namesilo域名解析教程" class="headerlink" title="💡Namesilo域名解析教程"></a>💡Namesilo域名解析教程</h2><hr>
+<p>域名购买完，如果你想自己建个网站，接下来有两件事情要做。</p>
+<ul>
+<li>购买主机</li>
+<li>域名解析</li>
+</ul>
+<h3 id="购买主机"><a href="#购买主机" class="headerlink" title="购买主机"></a>购买主机</h3><p>国内服务器最大的优势就是延迟比较低，不过需要备案，而且后续价格会贵一点。</p>
+<p>国外主机的优点是不用备案，但是访问的延迟会高一些。</p>
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>首先登陆namesilo账号，右上角点Manage My Domains，<br><img data-src="/domain/ManageMyDomains.webp" alt="Manage My Domains" title="Manage My Domains"></p>
+<p>然后点下图标记的蓝色圆球。<br><img data-src="/domain/domainmanger.webp" alt="域名管理" title="域名管理"></p>
+<p>下图里的记录是namesilo的默认记录，全部删除就行，后面我们再来添加新的A记录。<br><img data-src="/domain/managerdns.webp" alt="DNS管理" title="DNS管理"></p>
+<p>新加一条 <mark class="label info">A</mark> 记录， <mark class="label info">TTL</mark> 用默认的就行，如下图所示。<br><img data-src="/domain/addhostname.webp" alt="增加HOSTNAME" title="增加HOSTNAME"></p>
+<p>然后再新加一条 <mark class="label info">A</mark> 记录， <mark class="label info">HOSTNAME</mark> 填你随意想填写的内容，IP地址还是填服务器的公网IP地址。</p>
+<p>这边的话就是二级域名的概念了。</p>
+<p>假定你注册的域名是 <mark class="label info">google.com</mark> ,这里HOSTNAME你填了 <mark class="label info">blog</mark> ，那就表示， <mark class="label info">blog.google.com</mark> 这个二级域名解析到了你服务器上。</p>
+<p>你的一级域名是 <mark class="label info">google.com</mark> 。</p>
+<h2 id="⭐总结"><a href="#⭐总结" class="headerlink" title="⭐总结"></a>⭐总结</h2><hr>
+<p>刚开始注册购买域名，可能对域名费用不太在乎。</p>
+<p>但当你注册的域名越来越多时，你会发现域名费用也是一大笔钱。所以我们要选一家性价比最高的域名注册商。国外的话，Namesilo就是最佳选择。</p>
+<p>Namesilo域名价格全网最低，使用简单，安全级别高，后台管理方便，还有优惠码和免费的域名隐私保护，无论是新注册域名，还是域名续费都很划算。</p>
+<p>服务器的话，如果准备长期使用，而且网站访问的用户主要是国内人群，还是建议弄一台腾讯云或者阿里云的服务器，老老实实走备案，更稳定一些，当然你得发布健康的内容，不然查你水表，请你喝茶。</p>
+<p>买的服务如果不是大陆的话，就不用备案了，但也不要为所欲为，毕竟人还在国内，真要查你一样能找到你。怎么说呢，相对自由一些吧。</p>
+<hr>
+<p>Source:<br><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL25hbWVzaWxvLw==">【服务器、域名购买】Namesilo 优惠码和域名解析教程（附带服务器购买推荐和注意事项）<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>Domian</category>
+        <category>Namesilo</category>
+      </categories>
+      <tags>
+        <tag>Domian</tag>
       </tags>
   </entry>
   <entry>
