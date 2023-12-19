@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Welcome to Brian的小窝</title>
+    <url>/announcement/</url>
+    <content><![CDATA[<h1 id="Announcement"><a href="#Announcement" class="headerlink" title="Announcement"></a>Announcement</h1><p>域名 <del>brianwl.top</del> 已过期</p>
+<p>以后请使用 <strong><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLjZyMTRuLmNvbS8=">blog.6r14n.com<i class="fa fa-external-link-alt"></i></span></strong></p>
+<h2 id="作者留下的话"><a href="#作者留下的话" class="headerlink" title="作者留下的话"></a>作者留下的话</h2><p>欢迎来到Brian的小窝，我会这里分享一些使用技巧。<br>请持续关注我的Blog。</p>
+]]></content>
+      <categories>
+        <category>Announcement</category>
+      </categories>
+      <tags>
+        <tag>Announcement</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>创建个人Blog-Hexo</title>
     <url>/create-blog/</url>
     <content><![CDATA[<h1 id="📰静态博客-Hexo"><a href="#📰静态博客-Hexo" class="headerlink" title="📰静态博客-Hexo"></a>📰静态博客-Hexo</h1><hr>
@@ -98,17 +112,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Welcome to Brian的小窝</title>
-    <url>/announcement/</url>
-    <content><![CDATA[<h1 id="Announcement"><a href="#Announcement" class="headerlink" title="Announcement"></a>Announcement</h1><p>域名 <del>brianwl.top</del> 已过期</p>
-<p>以后请使用 <strong><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLjZyMTRuLmNvbS8=">blog.6r14n.com<i class="fa fa-external-link-alt"></i></span></strong></p>
-<h2 id="作者留下的话"><a href="#作者留下的话" class="headerlink" title="作者留下的话"></a>作者留下的话</h2><p>欢迎来到Brian的小窝，我会这里分享一些使用技巧。<br>请持续关注我的Blog。</p>
+    <title>HELLO WORLD</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>🌎🌍🌏<br>Hello World.<br>This is a test page for blog.<br>你好，世界。<br>这是用于测试Blog的页面。</p>
+<span id="more"></span>
+
+<hr>
+<p>Authored by Brian</p>
 ]]></content>
       <categories>
-        <category>Announcement</category>
+        <category>hello world</category>
       </categories>
       <tags>
-        <tag>Announcement</tag>
+        <tag>hello world</tag>
       </tags>
   </entry>
   <entry>
@@ -191,22 +207,6 @@
       </categories>
       <tags>
         <tag>Domian</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HELLO WORLD</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>🌎🌍🌏<br>Hello World.<br>This is a test page for blog.<br>你好，世界。<br>这是用于测试Blog的页面。</p>
-<span id="more"></span>
-
-<hr>
-<p>Authored by Brian</p>
-]]></content>
-      <categories>
-        <category>hello world</category>
-      </categories>
-      <tags>
-        <tag>hello world</tag>
       </tags>
   </entry>
   <entry>
@@ -342,7 +342,7 @@
 </ol>
 <h2 id="🖼️样例"><a href="#🖼️样例" class="headerlink" title="🖼️样例"></a>🖼️样例</h2><hr>
 <ul>
-<li><p>样例链接：<span class="exturl" data-url="aHR0cHM6Ly9yZWFkZXIuaHRtYWtlLmNvbS8=">点击这里<i class="fa fa-external-link-alt"></i></span></p>
+<li><p>样例链接：<span class="exturl" data-url="aHR0cHM6Ly9yZWFkZXIubnhub3cudG9wLw==">点击这里<i class="fa fa-external-link-alt"></i></span></p>
 <p>  阅读WEB样例: <img data-src="/reader/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
 </li>
 </ul>
