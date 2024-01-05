@@ -20,20 +20,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"6r14n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="📖Reader 阅读3服务器版，不需要手机。">
+    <meta name="description" content="这是一篇加密文章，需要密码才能继续阅读。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自建阅读WEB版-Reader">
 <meta property="og:url" content="http://6r14n.github.io/reader/index.html">
 <meta property="og:site_name" content="Brian&#39;s 小窝">
-<meta property="og:description" content="📖Reader 阅读3服务器版，不需要手机。">
+<meta property="og:description" content="这是一篇加密文章，需要密码才能继续阅读。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://6r14n.github.io/reader/reader.png">
 <meta property="article:published_time" content="2022-09-05T21:22:43.000Z">
-<meta property="article:modified_time" content="2023-12-19T08:07:44.598Z">
+<meta property="article:modified_time" content="2024-01-05T05:22:07.054Z">
 <meta property="article:author" content="Brian">
 <meta property="article:tag" content="Book">
+<meta property="article:tag" content="private">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://6r14n.github.io/reader/reader.png">
 
 
 <link rel="canonical" href="http://6r14n.github.io/reader/">
@@ -91,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">13</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -129,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -142,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%F0%9F%93%96Reader"><span class="nav-number">1.</span> <span class="nav-text">📖Reader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%92%A1%E6%95%99%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">💡教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.1.1.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%96%BC%EF%B8%8F%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">🖼️样例</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,7 +166,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -257,7 +255,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-19 02:07:44" itemprop="dateModified" datetime="2023-12-19T02:07:44-06:00">2023-12-19</time>
+      <time title="修改时间：2024-01-04 23:22:07" itemprop="dateModified" datetime="2024-01-04T23:22:07-06:00">2024-01-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,7 +285,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>226</span>
+      <span>80</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -304,35 +302,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="📖Reader"><a href="#📖Reader" class="headerlink" title="📖Reader"></a>📖Reader</h1><hr>
-<p>阅读3服务器版，不需要手机。</p>
-<span id="more"></span>
-
-<h2 id="💡教程"><a href="#💡教程" class="headerlink" title="💡教程"></a>💡教程</h2><hr>
-<ol>
-<li><p>Reader Web版来自Github的项目<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlY3RvcnFpbi9yZWFkZXI=">hectorqin&#x2F;reader<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li><mark class="label success">推荐可使用AWS或者AZ</mark>
-<p> ✅自备服务器建站教程（推荐使用Microsoft Azure）：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmxhb2RhLmRlL2FyY2hpdmVzL2RvY2tlci1jb21wb3NlLWluc3RhbGwtcmVhZGVy">【好玩儿的Docker项目】 10分钟搭建一个自己的网文阅读器 安卓的“阅读”APP网页版 附带书源！-咕咕鸽<i class="fa fa-external-link-alt"></i></span></p>
-<p> ✅<a href="../readerdeploy">备份教程</a></p>
-</li>
-<li><mark class="label danger">并不推荐以下方法</mark>
-<p> <del>❌免费docker服务器建站教程<span class="exturl" data-url="aHR0cHM6Ly9tcC53ZWl4aW4ucXEuY29tL3M/X19iaXo9TXpBNU5qRXdOakUwT1E9PSZtaWQ9MjI0NzUwNzY0NSZpZHg9MSZzbj04NWRlZGFjMDAyZTEzZWJkOTRmZDEzOThkYzg4MTBjOSZjaGtzbT05MGI3YmQ3N2E3YzAzNDYxNWMxMjJiYzI5NTI2NmMyYzRhYjJmZjFhYWY5YzNmOWEzODViMzgyZTBmNWE4MmE5NjdjYjI2Y2RmYTE5JmN1cl9hbGJ1bV9pZD0xNTIzNzE3OTAxMzAyNzEwMjczJnNjZW5lPTIxI3dlY2hhdF9yZWRpcmVjdA==">这款最强网文神器竟然出网页版了！！5分钟教你完全免费搭建一个 - 阿虚同学<i class="fa fa-external-link-alt"></i></span></del></p>
-<div class="note info"><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>Koyeb建站会不定时重置<br>Railway每个月有500小时的时间限制</p>
+    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d870a399514057e1ba9c362134e39d695827e1e7ba9a88f02e95bb21100c4395">4c56df0327187e5d1718df4e8b6dd246cf8c7a0c4be4651660afa70399aead7aff4d9b81617dfda9d607c3d3e0d6b6e43cf656d5829cd80dffdb42e3be01f53ff5933a964a46f175245ed511f914be7453cc6328ed4d5509e7ba71b33b8918468a5546f602c36c50b5274f9c38cde38f9df7aca796589d81a0ef77747999a12cc38fad91d0fcba1ae2a7226cae26de22adf16269b45219eb192ea87d71ad7b85eddd032e35261ad0208de2f9f9365a294942833bab8c32c88e837c3e31d51f3d12813f3a61e0b6848fd01efbf5467b6cfab2c945b17237beaf1cc98bf28669ca534c648da2265a3fbb155a7695c8d95ff03b0edfe3d36a85742944c1472c3e24c0cc01dd34cc3783ca5469e2b404c2fe2d4cd529c109e109a02ceaf0e2da509ea3764d7cc260ee379761c2c3696a0f709b61343e38cb38832845393e6cc7542babb152b381feddf3d4d18fcbe2d02f8358fad6f2a9a33728710135b7efd399ffd2942a3b812509fbe1ffb46e44d91ae047222c09905a8b77df4c364ee36de9b58b3a2652082070646fb5ce1629b6165de28a64b5a15f0bcfa34d7ff4a0bd518cb25b5494b55d0fe3977b4dfcbddc0116e29e1ca02f6e2009f8351b3a95f9e6761ca7858a4b6e6ee3d63f6afb141449344aad42421aa37511be5a4c5e2e77c1a5a4a05f73fff4d54a358e3981cece858fde65a533edce01f59721188e39ea0c4054df96aba6f372b47a8c645bb05e96806a35859d429993eb91a6f09d974ba52e74b538ced42013ac0f4284c53d4085ae8b95f702493894fbd3f7bfe57674d949904a800ff6afc00c4e5a7d69676460ff73aa2fd605f52b29d7a4ef94c9f37a207b7c26cbdebf3a82cd6e14033cbf99a63a3f1b3ebfa6e4f8b193f7494123510df4f03bf0e48a46f16c5e5164f324cb4e71bcfff92555152a1143af3ed542ef6451f5908d98f517aa8a5acce468cc7ee42b3539e30749f142e2141e9f0b3db8ccce5c37009da3d6af0b4108c037c25553880606b4fa077a5d949d94edd80ac1e9588f6b1cedf2e3c03629a9dcbb19ea31cb9565ebd5f49468e8051a37ec8630b3a032ff87353140050a1cddd3295ce083b2a51b6eaefb06978ef14ab81f7edb43f9aa5e783672d017bc9620082399ed8a4188966df0b9203bdf8401adc96a7691e7d2da3480fcf3e0f43c71a499ed3fde61cad4d1111e0969bb766aae7768f195feba2febdd826724da0461d2361f6f97e0dae105a6413b750c1207af57bd423c6c66461d052779dcb66dbc3461eef2857addee9eae32f6701c486e92738ddf15e9b1afe68177e0d4f7587c60cd51105703f7f62b877d301f9f892c358e1ba69a57648a484d7d83ad8ef8dea6e39a588c6dcdd93d3bb10b4cb6fc365143bd51f89bd7b831d7b34317d8db51571c1d9f403803048129dbcd3dec448b2d85756b57</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-shrink">
+      <input class="hbe hbe-input-field hbe-input-field-shrink" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-shrink" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-shrink">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
 </div>
-</li>
-<li><p>阅读书源：<span class="exturl" data-url="aHR0cHM6Ly95dWVkdS54aXUyLnh5ei8=">点击这里 每月更新<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ol>
-<h2 id="🖼️样例"><a href="#🖼️样例" class="headerlink" title="🖼️样例"></a>🖼️样例</h2><hr>
-<ul>
-<li><p>样例链接（样例仅供参考，资料不确保完好）：<span class="exturl" data-url="aHR0cHM6Ly9yZWFkZXIubnhub3cudG9wLw==">点击这里<i class="fa fa-external-link-alt"></i></span></p>
-<p>  阅读WEB样例: <img data-src="/reader/reader.png" alt="阅读WEB样例" title="阅读WEB样例"></p>
-</li>
-</ul>
-<hr>
-<p>Authored by Brian</p>
-
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -359,6 +340,7 @@
 
           <div class="post-tags">
               <a href="/tags/Book/" rel="tag"><i class="fa fa-tag"></i> Book</a>
+              <a href="/tags/private/" rel="tag"><i class="fa fa-tag"></i> private</a>
           </div>
 
         
@@ -400,7 +382,7 @@
 
   <div class="copyright">
     &copy; 2021 – 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa-solid fa-star fa-flip"></i>
     </span>
@@ -417,7 +399,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
