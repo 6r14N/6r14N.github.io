@@ -194,6 +194,46 @@
       </tags>
   </entry>
   <entry>
+    <title>HELLO WORLD</title>
+    <url>/hello-world/</url>
+    <content><![CDATA[<p>🌎🌍🌏<br>Hello World.<br>This is a test page for blog.<br>你好，世界。<br>这是用于测试Blog的页面。</p>
+<span id="more"></span>
+
+<hr>
+<p>Authored by Brian</p>
+]]></content>
+      <categories>
+        <category>hello world</category>
+      </categories>
+      <tags>
+        <tag>hello world</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自建阅读WEB版-Reader</title>
+    <url>/reader/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d870a399514057e1ba9c362134e39d695827e1e7ba9a88f02e95bb21100c4395">4c56df0327187e5d1718df4e8b6dd246cf8c7a0c4be4651660afa70399aead7aff4d9b81617dfda9d607c3d3e0d6b6e43cf656d5829cd80dffdb42e3be01f53ff5933a964a46f175245ed511f914be7453cc6328ed4d5509e7ba71b33b8918468a5546f602c36c50b5274f9c38cde38f9df7aca796589d81a0ef77747999a12cc38fad91d0fcba1ae2a7226cae26de22adf16269b45219eb192ea87d71ad7b85eddd032e35261ad0208de2f9f9365a294942833bab8c32c88e837c3e31d51f3d12813f3a61e0b6848fd01efbf5467b6cfab2c945b17237beaf1cc98bf28669ca534c648da2265a3fbb155a7695c8d95ff03b0edfe3d36a85742944c1472c3e24c0cc01dd34cc3783ca5469e2b404c2fe2d4cd529c109e109a02ceaf0e2da509ea3764d7cc260ee379761c2c3696a0f709b61343e38cb38832845393e6cc7542babb152b381feddf3d4d18fcbe2d02f8358fad6f2a9a33728710135b7efd399ffd2942a3b812509fbe1ffb46e44d91ae047222c09905a8b77df4c364ee36de9b58b3a2652082070646fb5ce1629b6165de28a64b5a15f0bcfa34d7ff4a0bd518cb25b5494b55d0fe3977b4dfcbddc0116e29e1ca02f6e2009f8351b3a95f9e6761ca7858a4b6e6ee3d63f6afb141449344aad42421aa37511be5a4c5e2e77c1a5a4a05f73fff4d54a358e3981cece858fde65a533edce01f59721188e39ea0c4054df96aba6f372b47a8c645bb05e96806a35859d429993eb91a6f09d974ba52e74b538ced42013ac0f4284c53d4085ae8b95f702493894fbd3f7bfe57674d949904a800ff6afc00c4e5a7d69676460ff73aa2fd605f52b29d7a4ef94c9f37a207b7c26cbdebf3a82cd6e14033cbf99a63a3f1b3ebfa6e4f8b193f7494123510df4f03bf0e48a46f16c5e5164f324cb4e71bcfff92555152a1143af3ed542ef6451f5908d98f517aa8a5acce468cc7ee42b3539e30749f142e2141e9f0b3db8ccce5c37009da3d6af0b4108c037c25553880606b4fa077a5d949d94edd80ac1e9588f6b1cedf2e3c03629a9dcbb19ea31cb9565ebd5f49468e8051a37ec8630b3a032ff87353140050a1cddd3295ce083b2a51b6eaefb06978ef14ab81f7edb43f9aa5e783672d017bc9620082399ed8a4188966df0b9203bdf8401adc96a7691e7d2da3480fcf3e0f43c71a499ed3fde61cad4d1111e0969bb766aae7768f195feba2febdd826724da0461d2361f6f97e0dae105a6413b750c1207af57bd423c6c66461d052779dcb66dbc3461eef2857addee9eae32f6701c486e92738ddf15e9b1afe68177e0d4f7587c60cd51105703f7f62b877d301f9f892c358e1ba69a57648a484d7d83ad8ef8dea6e39a588c6dcdd93d3bb10b4cb6fc365143bd51f89bd7b831d7b34317d8db51571c1d9f403803048129dbcd3dec448b2d85756b57</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-shrink">
+      <input class="hbe hbe-input-field hbe-input-field-shrink" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-shrink" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-shrink">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Book</category>
+        <category>Reader</category>
+      </categories>
+      <tags>
+        <tag>Book</tag>
+        <tag>private</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安装Nginx Proxy Manager</title>
     <url>/installNPM/</url>
     <content><![CDATA[<h1 id="Nginx-Proxy-Manager"><a href="#Nginx-Proxy-Manager" class="headerlink" title="Nginx Proxy Manager"></a>Nginx Proxy Manager</h1><hr>
@@ -299,46 +339,6 @@
       </categories>
       <tags>
         <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HELLO WORLD</title>
-    <url>/hello-world/</url>
-    <content><![CDATA[<p>🌎🌍🌏<br>Hello World.<br>This is a test page for blog.<br>你好，世界。<br>这是用于测试Blog的页面。</p>
-<span id="more"></span>
-
-<hr>
-<p>Authored by Brian</p>
-]]></content>
-      <categories>
-        <category>hello world</category>
-      </categories>
-      <tags>
-        <tag>hello world</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自建阅读WEB版-Reader</title>
-    <url>/reader/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="d870a399514057e1ba9c362134e39d695827e1e7ba9a88f02e95bb21100c4395">4c56df0327187e5d1718df4e8b6dd246cf8c7a0c4be4651660afa70399aead7aff4d9b81617dfda9d607c3d3e0d6b6e43cf656d5829cd80dffdb42e3be01f53ff5933a964a46f175245ed511f914be7453cc6328ed4d5509e7ba71b33b8918468a5546f602c36c50b5274f9c38cde38f9df7aca796589d81a0ef77747999a12cc38fad91d0fcba1ae2a7226cae26de22adf16269b45219eb192ea87d71ad7b85eddd032e35261ad0208de2f9f9365a294942833bab8c32c88e837c3e31d51f3d12813f3a61e0b6848fd01efbf5467b6cfab2c945b17237beaf1cc98bf28669ca534c648da2265a3fbb155a7695c8d95ff03b0edfe3d36a85742944c1472c3e24c0cc01dd34cc3783ca5469e2b404c2fe2d4cd529c109e109a02ceaf0e2da509ea3764d7cc260ee379761c2c3696a0f709b61343e38cb38832845393e6cc7542babb152b381feddf3d4d18fcbe2d02f8358fad6f2a9a33728710135b7efd399ffd2942a3b812509fbe1ffb46e44d91ae047222c09905a8b77df4c364ee36de9b58b3a2652082070646fb5ce1629b6165de28a64b5a15f0bcfa34d7ff4a0bd518cb25b5494b55d0fe3977b4dfcbddc0116e29e1ca02f6e2009f8351b3a95f9e6761ca7858a4b6e6ee3d63f6afb141449344aad42421aa37511be5a4c5e2e77c1a5a4a05f73fff4d54a358e3981cece858fde65a533edce01f59721188e39ea0c4054df96aba6f372b47a8c645bb05e96806a35859d429993eb91a6f09d974ba52e74b538ced42013ac0f4284c53d4085ae8b95f702493894fbd3f7bfe57674d949904a800ff6afc00c4e5a7d69676460ff73aa2fd605f52b29d7a4ef94c9f37a207b7c26cbdebf3a82cd6e14033cbf99a63a3f1b3ebfa6e4f8b193f7494123510df4f03bf0e48a46f16c5e5164f324cb4e71bcfff92555152a1143af3ed542ef6451f5908d98f517aa8a5acce468cc7ee42b3539e30749f142e2141e9f0b3db8ccce5c37009da3d6af0b4108c037c25553880606b4fa077a5d949d94edd80ac1e9588f6b1cedf2e3c03629a9dcbb19ea31cb9565ebd5f49468e8051a37ec8630b3a032ff87353140050a1cddd3295ce083b2a51b6eaefb06978ef14ab81f7edb43f9aa5e783672d017bc9620082399ed8a4188966df0b9203bdf8401adc96a7691e7d2da3480fcf3e0f43c71a499ed3fde61cad4d1111e0969bb766aae7768f195feba2febdd826724da0461d2361f6f97e0dae105a6413b750c1207af57bd423c6c66461d052779dcb66dbc3461eef2857addee9eae32f6701c486e92738ddf15e9b1afe68177e0d4f7587c60cd51105703f7f62b877d301f9f892c358e1ba69a57648a484d7d83ad8ef8dea6e39a588c6dcdd93d3bb10b4cb6fc365143bd51f89bd7b831d7b34317d8db51571c1d9f403803048129dbcd3dec448b2d85756b57</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-shrink">
-      <input class="hbe hbe-input-field hbe-input-field-shrink" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-shrink" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-shrink">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>Book</category>
-        <category>Reader</category>
-      </categories>
-      <tags>
-        <tag>Book</tag>
-        <tag>private</tag>
       </tags>
   </entry>
   <entry>
